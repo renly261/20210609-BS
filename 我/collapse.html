@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <style>
+    h3 {
+      margin: 1rem 0;
+    }
+
+    body {
+      background: #eee;
+    }
+
+    .container {
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script src="../js/bootstrap.bundle.min.js"></script>
+
+  <div class="container">
+    <h2>折疊 (Collapse)</h2>
+    <p>
+      <!-- data-toggle="collapse" 觸發 collapse 摺疊功能 -->
+      <!-- a 使用 href 來對應 id -->
+      <!-- aria- 等不影響功能 可以刪除 -->
+      <!-- id href 一樣可以改 但需要全部統一改 -->
+      <a class="btn btn-primary" data-toggle="collapse" href="#sam1" role="button" aria-expanded="false"
+        aria-controls="sam1">
+        a 元素摺疊
+      </a>
+      <!-- button 沒有 href 屬性， 需使用 data-target 來替代 href 屬性-->
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#sam1" aria-expanded="false"
+        aria-controls="sam1">
+        button 元素摺疊
+      </button>
+    </p>
+    <!-- 打開摺疊內容, collapse 會添加 .show 顯示內容 -->
+    <div class="collapse" id="sam1">
+      <div class="card card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
+        keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h4>多個目標(摺疊目標使用 class)</h4>
+    <p>點擊元素可以一次觸發多個摺疊目標, 例如</p>
+    <p>
+      <a class="btn btn-primary" data-toggle="collapse" href="#sam2" role="button" aria-expanded="false"
+        aria-controls="sam2">Toggle first element</a>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#sam3" aria-expanded="false"
+        aria-controls="sam3">Toggle second element</button>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse"
+        aria-expanded="false" aria-controls="sam2 sam3">Toggle both elements</button>
+    </p>
+    <div class="row">
+      <div class="col">
+        <div class="collapse multi-collapse" id="sam2">
+          <div class="card card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
+            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="collapse multi-collapse" id="sam3">
+          <div class="card card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
+            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h4>手風琴摺疊效果</h4>
+    <p>摺疊組合導覽和卡片</p>
+    <div class="accordion" id="sam4">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h2 class="mb-0">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+              aria-expanded="true" aria-controls="collapseOne">
+              產品類型(一)
+            </button>
+          </h2>
+        </div>
+        <!-- .show 設定一開始預設就開啟  -->
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#sam4">
+          <div class="card-body">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">產品項目</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">產品項目</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">產品項目</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo"
+              aria-expanded="false" aria-controls="collapseTwo">
+              產品類型(二)
+            </button>
+          </h2>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#sam4">
+          <div class="card-body">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">產品項目</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">產品項目</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">產品項目</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
+              aria-expanded="false" aria-controls="collapseThree">
+              產品類型(三)
+            </button>
+          </h2>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#sam4">
+          <div class="card-body">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">產品項目</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">產品項目</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">產品項目</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

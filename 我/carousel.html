@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <style>
+    h3 {
+      margin: 1rem 0;
+    }
+
+    body {
+      background: #eee;
+    }
+
+    .container {
+      margin-bottom: 2rem;
+    }
+
+    /* 改變輪播速率
+    https://easings.net/ */
+    /* all 是懶人寫法 因為目前 transition 只有影響到圖片 但如果有其他東西會全部一起影響 不能用 all */
+    .carousel-item {
+      transition: 2s all cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    }
+  </style>
+</head>
+
+<body>
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script src="../js/bootstrap.bundle.min.js"></script>
+
+  <div class="container">
+    <h2>輪播 (Carousel)</h2>
+    <!-- 指示器 結構裡 li 和 img 可以根據需求做增減-->
+    <!-- id="carouselExampleIndicators" 指示器 id 可以改 但要連下面 a 標籤上一張下一張 全部一起改否則無法作用 -->
+    <!-- data-interval="3000" 全部統一設定延遲自動轉場時間 3 秒 -->
+    <!-- 新增 class carousel-fade 改變成淡入淡出效果 -->
+    <div id="sam1" class="carousel slide" data-ride="carousel" data-interval="3000">
+      <ol class="carousel-indicators">
+        <li data-target="#sam1" data-slide-to="0" class="active"></li>
+        <li data-target="#sam1" data-slide-to="1"></li>
+        <li data-target="#sam1" data-slide-to="2"></li>
+        <li data-target="#sam1" data-slide-to="3"></li>
+        <li data-target="#sam1" data-slide-to="4"></li>
+      </ol>
+      <!-- 圖片 -->
+      <div class="carousel-inner">
+        <!-- active 一定要有且只能有一個 設定顯示哪一張 -->
+        <!-- data-interval="3000" 各別設定延遲自動轉場時間 3 秒 -->
+        <div class="carousel-item active" data-interval="3000">
+          <!-- d-block w-100 讓圖片填滿父元素 -->
+          <img src="https://picsum.photos/1920/600/?random=1" class="d-block w-100" alt="...">
+          <!-- 各別新增字幕 -->
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Lorem ipsum dolor sit amet.</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, porro.</p>
+          </div>
+        </div>
+        <div class="carousel-item" data-interval="3000">
+          <img src="https://picsum.photos/1920/600/?random=2" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Lorem ipsum dolor sit amet.</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, id?</p>
+          </div>
+        </div>
+        <div class="carousel-item" data-interval="3000">
+          <img src="https://picsum.photos/1920/600/?random=3" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Lorem ipsum dolor sit amet.</h5>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam, itaque.</p>
+          </div>
+        </div>
+        <div class="carousel-item" data-interval="3000">
+          <img src="https://picsum.photos/1920/600/?random=4" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Lorem ipsum dolor sit amet.</h5>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, error?</p>
+          </div>
+        </div>
+        <div class="carousel-item" data-interval="3000">
+          <img src="https://picsum.photos/1920/600/?random=5" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Lorem ipsum dolor sit amet.</h5>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque, labore.</p>
+          </div>
+        </div>
+      </div>
+      <!-- 上一張 -->
+      <a class="carousel-control-prev" href="#sam1" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <!-- 下一張 -->
+      <a class="carousel-control-next" href="#sam1" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+</body>
+
+</html>

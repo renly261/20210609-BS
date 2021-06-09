@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <style>
+    h3 {
+      margin: 1rem 0;
+    }
+
+    body {
+      background: #eee;
+    }
+
+    .container {
+      margin-bottom: 2rem;
+    }
+
+    /* 佔位文字偽元素 */
+    /* ::placeholder {
+      color: red !important;
+    } */
+
+    :indeterminate+label {
+      border: 1px solid #333;
+      background: yellow;
+    }
+  </style>
+</head>
+
+<body>
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script src="../js/bootstrap.bundle.min.js"></script>
+
+  <div class="container">
+    <h2>表單 (Forms) 外面要用 form 標籤包起來</h2>
+    <p>用於創建各種表單控制項樣式、佈局選項和自訂群組件的範例和使用指南。</p>
+
+    <div class="row">
+      <div class="col">
+        <form>
+          <!-- form-group 預設不是彈性盒 -->
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <!-- placeholder 佔位文字 -->
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h4>表單控制</h4>
+    <div class="row">
+      <div class="col">
+        <form>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Email address</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">下拉式</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect2">multiple 攤開來</label>
+            <!-- multiple 可以一次顯示選擇多個， 去掉變下拉式 -->
+            <select multiple class="form-control" id="exampleFormControlSelect2">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Example textarea</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h4>核取方塊和選項按鈕</h4>
+    <p>block</p>
+    <div class="row">
+      <div class="col">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+            Default checkbox
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled>
+          <label class="form-check-label" for="defaultCheck2">
+            Disabled checkbox
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h4>行內</h4>
+    <p>inline-flex</p>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+      <label class="form-check-label" for="inlineCheckbox1">1</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+      <label class="form-check-label" for="inlineCheckbox2">2</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+      <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
+    </div>
+  </div>
+
+  <div class="container">
+    <h4>表單群組</h4>
+    <div class="row">
+      <div class="col">
+        <form>
+          <div class="form-group">
+            <label for="formGroupExampleInput">Example label</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput2">Another label</label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h4>表單列</h4>
+    <div class="row">
+      <div class="col">
+        <form>
+          <div class="form-row">
+            <div class="col">
+              <input type="text" class="form-control" placeholder="First name">
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Last name">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h4>驗證表單</h4>
+    <div class="row">
+      <div class="col">
+        <!-- 表單驗證需要 .needs-validation 和 novalidate -->
+        <form class="needs-validation" novalidate>
+          <div class="form-row">
+            <div class="col-md-4 mb-3">
+              <label for="validationCustom01">First name</label>
+              <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="Mark"
+                required>
+              <!-- .valid-feedback 表單有填東西 submit 出現的訊息 -->
+              <div class="valid-feedback">
+                表單有東西回復的訊息
+              </div>
+              <!-- .invalid-feedback 表單沒有填東西 submit 出現的訊息 -->
+              <div class="invalid-feedback">
+                表單沒有東西回復的訊息
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="validationCustom02">Last name</label>
+              <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Otto"
+                required>
+              <div class="valid-feedback">
+                表單有東西回復的訊息
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="validationCustomUsername">Username</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroupPrepend">@</span>
+                </div>
+                <input type="text" class="form-control" id="validationCustomUsername" placeholder="Username"
+                  aria-describedby="inputGroupPrepend" required>
+                <!-- .invalid-feedback 表單沒有填東西 submit 出現的訊息 -->
+                <div class="invalid-feedback">
+                  表單沒有東西回復的訊息
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label for="validationCustom03">City</label>
+              <input type="text" class="form-control" id="validationCustom03" placeholder="City" required>
+              <div class="invalid-feedback">
+                Please provide a valid city.
+              </div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="validationCustom04">State</label>
+              <input type="text" class="form-control" id="validationCustom04" placeholder="State" required>
+              <div class="invalid-feedback">
+                Please provide a valid state.
+              </div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="validationCustom05">Zip</label>
+              <input type="text" class="form-control" id="validationCustom05" placeholder="Zip" required>
+              <div class="invalid-feedback">
+                Please provide a valid zip.
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+              <label class="form-check-label" for="invalidCheck">
+                Agree to terms and conditions
+              </label>
+              <div class="invalid-feedback">
+                You must agree before submitting.
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-primary" type="submit">Submit form</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h4>indeterminate 為不確定的狀態</h4>
+    <div class="row">
+      <div class="col">
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="check1">
+          <label class="custom-control-label" for="check1">愛</label>
+        </div>
+
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="check2">
+          <label class="custom-control-label" for="check2">不愛</label>
+        </div>
+
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="check3">
+          <label class="custom-control-label" for="check3">愛與不愛之間的狀態</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h4>切換開關</h4>
+    <div class="row">
+      <div class="col">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="customSwitch1">
+          <label class="custom-control-label" for="customSwitch1">Toggle this switch element</label>
+        </div>
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" disabled id="customSwitch2">
+          <label class="custom-control-label" for="customSwitch2">Disabled switch element</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h4>控制條</h4>
+    <div class="row">
+      <div class="col">
+        <label for="customRange3">Example range</label>
+        <!-- step="0.5" 每 0.5 一個進度 -->
+        <input type="range" class="custom-range" min="0" max="5" step="0.5" id="customRange3">
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h4>檔案瀏覽</h4>
+    <div class="row">
+      <div class="col">
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="customFile">
+          <!-- 預設名字 Browse 不能直接改， 要用 data-browse="你要的名字" 更改 -->
+          <label class="custom-file-label" for="customFile" data-browse="瀏覽">請選擇檔案</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+      'use strict';
+      window.addEventListener('load', function () {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function (form) {
+          form.addEventListener('submit', function (event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+
+    // 選取
+    // JS
+    document.getElementById('check1').checked = true
+    // jQ
+    $('#check1').prop('checked', true)
+
+
+    // 未選取
+    // JS
+    document.getElementById('check2').checked = true
+    // jQ
+    $('#check2').prop('checked', false)
+
+
+    // 不確定， 只能用程式控制
+    // JS
+    document.getElementById('check3').indeterminate = true
+    // jQ
+    $('#check3').prop('indeterminate', true)
+  </script>
+</body>
+
+
+</html>
